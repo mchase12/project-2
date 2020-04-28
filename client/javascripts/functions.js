@@ -27,8 +27,25 @@ let revWords2 = (sentence) => {
         }
         arr[i] = temp;
     }
-    return arr.join(" ");
+    return arr.join(" ");[]
 }
+
+let revWords3 = (sentence) => {
+    var arr = sentence.split(" ");
+    var temp;
+    for (char of arr) {
+      temp = char + temp;
+    }
+    for (var i = 0; i < arr.length; i++) {
+        temp = "";
+        for (var j = arr[i].length-1; j >= 0; j--) {
+            temp += arr[i][j];
+        }
+        arr[i] = temp;
+    }
+    return arr.join(" ");[]
+}
+
 
 
 let containsDuplicates = (str) => {
