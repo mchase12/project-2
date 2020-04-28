@@ -1,19 +1,34 @@
 // jshint esversion: 6
 
-let containsDuplicates = s => {
-  let cArr = [0, 0, 0, 0],
-    code;
-  for (let i in cArr) {
-    code = s[i].toUpperCase().charCodeAt(0) - 65;
-    //console.log(code);
-    if (cArr[code] > 0) {
-      return true;
-    } else {
-      cArr[i]++;
+
+let revWords1 = (sentence) => {
+    var words = sentence.split(" ");
+    var temp;
+    for (var i = 0; i < words.length; i++) {
+        temp = "";
+        for (var j = words[i].length-1; j >= 0; j--) {
+            temp += words[i][j];
+        }
+        words[i] = temp;
     }
-  }
-  return false;
-};
+    return words.join(" ");
+}
+
+let revWords2 = (sentence) => {
+    var arr = sentence.split(" ");
+    var temp;
+    arr.forEach((char) => {
+      temp = char + temp;
+    });
+    for (var i = 0; i < arr.length; i++) {
+        temp = "";
+        for (var j = arr[i].length-1; j >= 0; j--) {
+            temp += arr[i][j];
+        }
+        arr[i] = temp;
+    }
+    return arr.join(" ");
+}
 
 
 let containsDuplicates = (str) => {
