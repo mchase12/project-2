@@ -14,3 +14,17 @@ let containsDuplicates = s => {
   }
   return false;
 };
+
+
+let containsDuplicates = (str) => {
+  let charCount = new Array(26).fill(0), ASCIIcode;
+  for (let i in str) {
+    ASCIIcode = str[i].toUpperCase().charCodeAt(0) - 65;
+    if (charCount[ASCIIcode] > 0 ) {
+      return true;
+    } else {
+      charCount[i]++;
+    }
+  }
+  return false;
+};
